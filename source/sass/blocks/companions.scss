@@ -1162,11 +1162,11 @@
 
   &__item:nth-child(4n+4) &__item-flags-wrapper &__item-flag-wrapper:nth-child(2n+1) &__item-flag-icon {
     @include desktop {
-      min-width: size(35px);
+      max-width: size(35px);
       height: size(24px);
 
       img {
-        width: size(35px);
+        max-width: size(35px);
         height: size(24px);
       }
     }
