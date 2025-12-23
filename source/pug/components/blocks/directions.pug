@@ -1,0 +1,20 @@
+mixin directions()
+  .directions(id="directions")
+    .container
+      .directions__intro
+        h2.directions__title Направления
+        p Мы&nbsp;не&nbsp;продаем туры и&nbsp;ничего не&thinsp;<br>рекламируем.&thinsp;<br>Люди сами пишут о&nbsp;странах, куда хотели&nbsp;бы отправиться и&nbsp;чем можно там заняться.
+      .directions__countries-wrapper
+        .directions__countries
+          .directions__fade-image.directions__fade-image--up
+            +picture("content", "fade-image-up", "png", 610, 81, " ")
+          .diretions__countries-list.swiper
+            ul.directions__list.swiper-wrapper
+              +country-card("directions", "Таиланд", "Джунгли зовут!", {counter: '18321', image: 'thailand-image', width: '202', altText: 'Побережье Тайланда', icon: 'flag-image-thailand', width1: '76', altText1: 'Флаг Тайланда', image2: 'thailand-image-mobile', altText2: 'Побережье Тайланда'}).directions__item-tailand.swiper-slide
+              +country-card("directions", "Франция", "Трэ бьен, манифик!", {counter: '12518', image: 'france-image', width: '186', altText: 'Улица Парижа', icon: 'flag-image-france', width1: '70', altText1: 'Флаг Франции', image2: 'france-image-mobile', altText2: 'Улица Парижа'}).directions__item-france.swiper-slide
+              +country-card("directions", "Чехия", "Закоулки старой Европы", {counter: '5326', image: 'czech-image', width: '202', altText: 'Река Влтава и Карлов Мост в Праге', icon: 'flag-image-czech', width1: '70', altText1: 'Флаг Чехии', image2: 'czech-image-mobile', altText2: 'Река Влтава и Карлов Мост в Праге'}).directions__item-czech.swiper-slide
+          .directions__fade-image.directions__fade-image--down
+            +picture("content", "fade-image-down", "png", 610, 81, " ")
+      ul.directions__buttons
+        li
+          +btn({href: 'catalog.html', text: 'Показать все', isExternal: true}).directions__button

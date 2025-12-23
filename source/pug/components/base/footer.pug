@@ -1,0 +1,15 @@
+mixin footer(footerMods)
+  footer.footer(class=footerMods)
+    .container
+      .footer__logo
+          if(currentUrl === "index.html")
+            span.footer__logo-link-desktop
+              +img("vector", "logo-footer", "svg", 200, 50, "Логотип сайта Погнали?")
+            span.footer__logo-link-mobile
+              +icon("logo-mobile", 96, 15)
+          else
+            a.footer__logo-link-desktop(href="index.html", target="_blank", aria-label="Переход на главную")
+              +img("vector", "logo-footer", "svg", 200, 50, "Логотип сайта Погнали?")
+            a.footer__logo-link-mobile(href="index.html", target="_blank", aria-label="Переход на главную")
+              +icon("logo-mobile", 96, 15)
+      +social('footer')

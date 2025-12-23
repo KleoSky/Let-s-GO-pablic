@@ -1,0 +1,587 @@
+.directions {
+  background-color: transparent;
+  margin-top: size(-118px);
+  position: relative;
+  z-index: 5;
+
+  .container {
+    padding: 0;
+    display: grid;
+    grid-template-columns: size(60px) min-content size(112px) 1fr size(60px);
+    grid-template-rows: size(88px) min-content min-content size(96px) (63px);
+
+    @include max-tablet {
+      background-color: $color-default-solitude;
+      display: flex;
+      flex-direction: column;
+    }
+
+    @include tablet {
+      padding: 0 size-tablet(40px) size-tablet(99px);
+      row-gap: size-tablet(74px);
+      border-bottom-right-radius: 61px;
+      border-bottom-left-radius: 61px;
+    }
+
+    @include mobile {
+      padding: size-mobile(93px) size-mobile(25px) size-mobile(53px);
+      row-gap: size-mobile(22px);
+      border-radius: 28px;
+    }
+  }
+
+  &__intro {
+    min-width: size(509px);
+    padding-top: size(116px);
+    display: flex;
+    flex-direction: column;
+    grid-column: 4 / 5;
+    grid-row: 2 / 3;
+
+    p {
+      font-size: size(23px);
+      line-height: 1.43;
+      margin: 0;
+      margin-bottom: size(155px);
+
+      @include tablet {
+        width: size-tablet(610px);
+        font-size: size-tablet($fz-default);
+        line-height: 1.38;
+        margin: 0;
+        margin-left: size-tablet(2px);
+
+        br {
+          display: none;
+        }
+      }
+
+      @include mobile {
+        width: unset;
+        font-size: size-mobile($fz-mobile);
+        line-height: 1.57;
+        font-weight: 400;
+        margin: 0;
+        margin-bottom: size-mobile(19px);
+
+        br {
+          display: none;
+        }
+      }
+    }
+
+    @include tablet {
+      padding: size-tablet(98px) size-tablet(33px) 0;
+    }
+
+    @include mobile {
+      min-width: unset;
+      padding: 0;
+    }
+  }
+
+  &__countries-wrapper {
+    min-width: size(749px);
+    padding: size(213px) size(59px) size(157px) size(59px);
+    background-color: $color-default-solitude;
+    border-radius: 54px;
+    grid-column: 1 / 3;
+    grid-row: 1 / -1;
+    position: relative;
+    z-index: 5;
+
+    @include tablet {
+      min-width: unset;
+      margin-bottom: size-tablet(18px);
+      padding: 0;
+    }
+
+    @include mobile {
+      min-width: unset;
+      background-color: transparent;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  &__title {
+    font-size: size(75px);
+    line-height: 1;
+    font-variant-caps: all-small-caps;
+    color: $color-default-midnight-express;
+    margin: 0;
+    margin-bottom: size(18px);
+
+    @include tablet {
+      font-size: size-tablet(95px);
+      margin-bottom: size-tablet(30px);
+    }
+
+    @include mobile {
+      font-size: size-mobile(44px);
+      margin-bottom: size-mobile(16px);
+    }
+  }
+
+  &__buttons {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: size(10px);
+    grid-column: 4 / 5;
+    grid-row: 3 / 4;
+
+    @include tablet {
+      align-self: center;
+    }
+  }
+
+  &__button {
+    width: size(299px);
+    margin-left: size(6px);
+    padding: size(29px) size(39px) size(27px) size(36px);
+
+    @include tablet {
+      width: size-tablet(618px);
+      font-size: size-tablet($fz-default);
+      line-height: 1;
+      padding: size-tablet(31px) size-tablet(19px) size-tablet(27px) size-tablet(33px);
+    }
+
+    @include mobile {
+      width: size-mobile(270px);
+      font-size: size-mobile(18px);
+      line-height: 1;
+      margin-left: 0;
+      margin-top: size-mobile(2px);
+      padding: size-mobile(23px);
+      padding-top: size-mobile(25px);
+      border-radius: 12px;
+    }
+  }
+
+  &__countries {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__fade-image {
+    width: size(608px);
+    height: size(81px);
+    position: absolute;
+    z-index: 2;
+    border-radius: 20px;
+    left: size(13px);
+
+    img {
+      width: size(608px);
+      height: size(81px);
+
+      @include tablet {
+        height: size-tablet(81px);
+      }
+    }
+
+    @include tablet {
+      width: size-tablet(618px);
+      height: size-tablet(76px);
+      left: size-tablet(35px);
+
+      img {
+        width: size-tablet(618px);
+        height: size-tablet(76px);
+      }
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__fade-image--up {
+    top: size(-8px);
+
+    @include tablet {
+      top: size-tablet(-8px);
+    }
+  }
+
+  &__fade-image--down {
+    height: size(81px);
+    bottom: size(-5px);
+
+    img {
+      height: size(81px);
+    }
+
+    @include tablet {
+      width: size-tablet(618px);
+      height: size-tablet(76px);
+      bottom: size-tablet(-13px);
+
+      img {
+        width: size-tablet(618px);
+        height: size-tablet(76px);
+      }
+    }
+  }
+
+  &__list {
+    height: size(440px);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      height: size-tablet(440px);
+    }
+
+    @include mobile {
+      height: unset;
+      row-gap: size-mobile(10px);
+    }
+  }
+
+  &__item {
+    width: size(608px);
+    background-color: $color-default-white;
+    margin-left: size(13px);
+    display: grid;
+    grid-template-columns: size(33px) size(335px) size(38px) size(38px) min-content;
+    grid-template-rows: size(23px) min-content size(49px) size(18px);
+    border-radius: 20px;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+
+    @include tablet-etalon {
+      cursor: pointer;
+    }
+
+    @include tablet {
+      width: size-tablet(616px);
+      margin-left: size-tablet(35px);
+      grid-template-columns: size-tablet(30px) size-tablet(367px) size-tablet(35px) size-tablet(35px) min-content;
+      grid-template-rows: size-tablet(17px) min-content size-tablet(56px) size-tablet(20px);
+    }
+
+    @include mobile {
+      width: size-mobile(270px);
+      margin: 0;
+      grid-template-columns: size-mobile(24px) min-content 1fr size-mobile(17px);
+      grid-template-rows: size-mobile(92px) size-mobile(12px) min-content min-content;
+      box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  &__item-active,
+  .swiper-slide-active {
+    width: size(623px);
+    border-radius: 20px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+    margin-left: size(5px);
+
+    @include tablet {
+      width: size-tablet(632px);
+      grid-template-columns: size-tablet(30px) size-tablet(367px) size-tablet(35px) size-tablet(35px) min-content;
+      grid-template-rows: size-tablet(17px) min-content size-tablet(56px) size-tablet(20px);
+      margin-left: size-tablet(26px);
+    }
+
+
+    // callback при ручном резайзе
+    @include mobile {
+      width: size-mobile(270px);
+      margin: 0;
+      grid-template-columns: size-mobile(24px) min-content 1fr size-mobile(17px);
+      grid-template-rows: size-mobile(90px) size-mobile(12px) min-content min-content;
+    }
+  }
+
+  &__item-active &__item-image,
+  .swiper-slide-active .directions__item-image {
+    width: size(207px);
+    height: size(140px);
+    margin-left: size(11px);
+
+    img {
+      width: size(207px);
+      height: size(140px);
+    }
+
+    @include tablet {
+      width: size-tablet(192px);
+      height: size-tablet(140px);
+      margin-left: size-tablet(13px);
+
+      img {
+        width: size-tablet(192px);
+        height: size-tablet(140px);
+      }
+    }
+  }
+
+  &__item-tailand &__item-icon {
+    @include mobile {
+      margin-top: size-mobile(-1px);
+
+      img {
+        height: size-mobile(25px);
+      }
+    }
+  }
+
+  &__item-tailand &__item-image {
+    @include tablet-etalon {
+      img {
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+      }
+    }
+  }
+
+  &__item-france &__item-icon {
+    margin-top: size(-3px);
+    margin-left: size(10px);
+
+    @include tablet {
+      margin-top: 0;
+      margin-left: 0;
+    }
+
+    @include mobile {
+      margin-top: size-mobile(-4px);
+      margin-left: 0;
+    }
+  }
+
+  &__item-czech &__item-icon {
+    margin-top: size(-3px);
+    margin-left: size(-3px);
+
+    @include tablet {
+      // height: auto;
+      margin-top: size-tablet(-1px);
+      margin-left: 0;
+
+      img {
+        height: 100%;
+      }
+    }
+
+    @include mobile {
+      margin: 0;
+      margin-top: size-mobile(-5px);
+    }
+  }
+
+  &__item-czech &__item-image img {
+    @include tablet {
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+  }
+
+  &__item-info {
+    display: flex;
+    flex-direction: column;
+    grid-column: 2 / 4;
+    grid-row: 2 / 4;
+
+    @include mobile {
+      background-color: $color-default-white;
+      border-radius: 14px;
+      padding-top: 0;
+      border-top-right-radius: 12px;
+      border-top-left-radius: 12px;
+      display: grid;
+      grid-template-columns: size-mobile(24px) size-mobile(94px) size-mobile(67px) min-content size-mobile(17px);
+      grid-template-rows: size-mobile(28px) min-content min-content size-mobile(14px);
+      grid-column: 1 / -1;
+      grid-row: 3 / 5;
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  &__item-info h3 {
+    font-size: inherit;
+    line-height: 1;
+    color: $color-default-black;
+    margin: 0;
+    margin-bottom: size(4px);
+
+    @include tablet {
+      font-size: size-tablet($fz-default);
+      margin-top: size-tablet(12px);
+      margin-bottom: size-tablet(5px);
+    }
+
+    @include mobile {
+      font-size: size-mobile(21px);
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+    }
+  }
+
+  &__item-info p,
+  &__item-folowers span {
+    font-size: size(20px);
+    line-height: 1;
+    opacity: 0.3;
+
+    @include tablet {
+      font-size: size-tablet(20px);
+    }
+  }
+
+  &__item-info p {
+    max-width: size(320px);
+    margin: 0;
+    margin-bottom: size(23px);
+
+    @include tablet {
+      max-width: size-tablet(320px);
+      margin-bottom: size-tablet(17px);
+    }
+
+    @include mobile {
+      max-width: size-mobile(270px);
+      font-size: size-mobile(16px);
+      line-height: 1.13;
+      grid-column: 2 / 5;
+      grid-row: 3 / 4;
+      margin-top: 2px;
+    }
+  }
+
+  &__item-info span {
+    @include mobile {
+      font-size: size-mobile(16px);
+      line-height: 1.25;
+    }
+  }
+
+  &__item-icon {
+    width: size(70px);
+    height: size(47px);
+    grid-column: 3 / 5;
+    grid-row: 2 / 3;
+    position: relative;
+    z-index: 1;
+
+    img {
+      width: size(70px);
+      height: size(47px);
+    }
+
+    @include tablet {
+      width: size-tablet(70px);
+      height: size-tablet(47px);
+
+      img {
+        width: size-tablet(70px);
+        height: size-tablet(47px);
+      }
+    }
+
+    @include mobile {
+      width: size-mobile(35px);
+      height: size-mobile(24px);
+      grid-column: 2 / 3;
+      grid-row: 2 / 4;
+
+      img {
+        width: size-mobile(35px);
+        height: size-mobile(24px);
+      }
+    }
+  }
+
+  &__item-image--desktop {
+    width: size(202px);
+    height: size(140px);
+    grid-column: 4 / 6;
+    grid-row: 1 / -1;
+    position: relative;
+    z-index: 0;
+
+    img {
+      width: size(202px);
+      height: size(140px);
+      object-fit: cover;
+
+      @include tablet {
+        width: size-tablet(185px);
+        height: size-tablet(140px);
+      }
+    }
+
+    @include tablet {
+      width: size-tablet(185px);
+      height: size-tablet(140px);
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__item-image--mobile {
+    @include tablet-etalon {
+      display: none;
+    }
+
+    width: size-mobile(270px);
+    height: size-mobile(110px);
+    grid-column: 1 / -1;
+    grid-row: 1 / 4;
+    position: relative;
+    z-index: 0;
+
+    img {
+      width: size-mobile(270px);
+      height: size-mobile(110px);
+    }
+  }
+
+  &__item-folowers {
+    margin-left: size(-2px);
+    display: flex;
+    align-items: flex-end;
+    column-gap: size(9px);
+
+    svg {
+      width: size(27px);
+      height: size(24px);
+    }
+
+    @include tablet {
+      margin-left: size-tablet(-4px);
+      column-gap: size-tablet(9px);
+
+      svg {
+        width: size-tablet(27px);
+        height: size-tablet(24px);
+      }
+    }
+
+    @include mobile {
+      grid-column: 4 / 5;
+      grid-row: 2 / 3;
+      align-items: center;
+      column-gap: size-tablet(15px);
+
+      svg {
+        width: size-mobile(16px);
+        height: size-mobile(15px);
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+doctype html
+
+include ../components
+
+block variables
+
+html(lang="ru")
+  head
+    title= title
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    meta(name="description", content="Погнали - это сервис для поиска попутчиков в путешествиях")
+    link(rel="preload", as="image", href="img/content/back-image-desktop@2x.webp")
+    link(rel="preload", as="image", href="img/content/back-image-tablet@2x.webp")
+    link(rel="preload", as="image", href="img/content/back-image-mobile@2x.webp")
+    link(rel="preload", as="image", href="img/content/main-image-desktop@2x.webp")
+    link(rel="preload", as="image", href="img/content/main-image-tablet@2x.webp")
+    link(rel="preload", as="image", href="img/content/main-image-mobile@2x.webp")
+    link(rel="preload", as="image", href="img/content/about-image-desktop@2x.webp")
+    link(rel="preload", as="image", href="img/content/about-image-tablet@2x.webp")
+    link(rel="preload", as="image", href="img/content/about-image-mobile@2x.webp")
+    link(rel="preload", as="image", href="img/content/map-image-desktop@2x.webp")
+    link(rel="preload", as="image", href="img/content/map-image-tablet@2x.webp")
+    link(rel="preload", as="image", href="img/content/map-image-mobile@2x.webp")
+    link(rel="preload", href="fonts/roboto-200.woff2", type="font/woff2", as="font", crossorigin="anonymous")
+    link(rel="preload", href="fonts/roboto-300.woff2", type="font/woff2", as="font", crossorigin="anonymous")
+    link(rel="preload", href="fonts/roboto-400.woff2", type="font/woff2", as="font", crossorigin="anonymous")
+    link(rel="preload", href="fonts/roboto-500.woff2", type="font/woff2", as="font", crossorigin="anonymous")
+    link(rel="preload", href="fonts/roboto-700.woff2", type="font/woff2", as="font", crossorigin="anonymous")
+    link(rel="preload", href="fonts/roboto-condensed-300.woff2", type="font/woff2", as="font", crossorigin="anonymous")
+    link(rel="stylesheet", href="css/style.min.css")
+    link(rel="icon", href="favicon.ico")
+    link(rel="icon", sizes="96x96", href="img/file/96.png", type="image/png")
+    link(rel="icon", href="img/vector/icon.svg", type="image/svg+xml")
+    link(rel="apple-touch-icon", href="img/file/apple.png")
+    link(rel="manifest", href="manifest.webmanifest", crossorigin="use-credentials")
+
+  body
+    .wrapper(class=wrapperMods)
+      if (hasHeader)
+        +header(headerMods, currentUrl)
+
+      block main
+
+      if (hasFooter)
+        +footer(footerMods)
+
+    block modals
+
+    script(src="js/vendor.min.js")
+    script(src="js/main.min.js")

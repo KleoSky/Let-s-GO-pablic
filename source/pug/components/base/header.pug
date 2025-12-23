@@ -1,0 +1,52 @@
+mixin header(headerMods, currentUrl)
+  - const pageClass = currentUrl === "catalog.html" ? "header-catalog" : "header-index"
+  header.header(class=headerMods, class=pageClass)
+    .container
+      .header__nav-wrapper
+        .header__logo
+          if(currentUrl === "index.html")
+            span.header__logo-link-desktop
+              +img("vector", "logo", "svg", 200, 50, "Логотип сайта Погнали?")
+            span.header__logo-link-mobile
+              +icon("logo-mobile", 96, 15)
+          else
+            a.header__logo-link-desktop(href="index.html", target="_blank", aria-label="Переход на главную")
+              +img("vector", "logo", "svg", 200, 50, "Логотип сайта Погнали?")
+            a.header__logo-link-mobile(href="index.html", target="_blank", aria-label="Переход на главную")
+              +icon("logo-mobile", 96, 15)
+        span.header__line
+          +icon("icon-line-header", 60, 2)
+        nav.header__nav
+          ul.header__nav-list
+            li.header__nav-item
+              a.header__nav-link(href="#about")
+                span(data-hover="О сервисе") О сервисе
+            li.header__nav-item
+              a.header__nav-link(href="#directions")
+                span(data-hover="Направления") Направления
+            li.header__nav-item
+              a.header__nav-link(href="#folowers")
+                span(data-hover="Попутчики") Попутчики
+          button.header__button(type="button", aria-label="Открыть меню")
+            +img("vector","icon-burger", "svg", 25, 11, " ")
+      .header__feedback-wrapper
+        a.header__feedback.header__feedback--call(href="tel:+78005558628", target="_blank", aria-label="Позвонить нам")
+          +icon("icon-call-header", 18, 18)
+        a.header__feedback.header__feedback--mail(href="mailto:mail@htmlacademy.ru", target="_blank", aria-label="Написать нам")
+          +icon("icon-mail-header", 16, 14)
+      .header__menu.header__menu--closed
+        ul.header__menu-list
+            li.header__menu-item
+              a.header__menu-link(href="#about", target="_blank") О сервисе
+            li.header__menu-item
+              a.header__menu-link(href="#directions", target="_blank") Направления
+            li.header__menu-item
+              a.header__menu-link(href="#folowers", target="_blank") Попутчики
+        .header__menu-feedback-wrapper
+          a.header__menu-feedback.header__menu-feedback--call(href="tel:+78005558628", target="_blank", aria-label="Позвонить нам") 8 800 555-86-28
+            .header__menu-feedback-icon
+              +icon("icon-call", 18, 18)
+          a.header__menu-feedback.header__menu-feedback--mail(href="mailto:mail@htmlacademy.ru", target="_blank", aria-label="Написать нам") mail@htmlacademy.ru
+            .header__menu-feedback-icon
+              +icon("icon-mail", 16, 14)
+        +social("header")

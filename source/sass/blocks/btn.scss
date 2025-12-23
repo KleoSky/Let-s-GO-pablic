@@ -1,0 +1,53 @@
+.btn {
+  line-height: 1;
+  font-weight: 700;
+  color: $color-default-catalina-blue;
+  background-color: $color-default-pale-cornflower-blue;
+  border: none;
+  border-radius: 20px;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &--red {
+    background-color: $color-torch-red;
+  }
+
+  &:hover:not(:disabled),
+  &:focus:not(:disabled) {
+    background-color: $color-default-jordy-blue;
+    transition: all 0.2s ease;
+  }
+
+  &:active:not(:disabled) {
+    color: rgba(22, 28, 53, 0.3);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: default;
+  }
+
+  @include max-tablet {
+    font-size: $fz-default;
+    font-weight: 700;
+  }
+
+  svg {
+    min-width: size(14px);
+    height: size(14px);
+
+    @include tablet {
+      min-width: size-tablet(14px);
+      height: size-tablet(14px);
+    }
+
+    @include mobile {
+      min-width: size-mobile(14px);
+      height: size-mobile(14px);
+    }
+  }
+}

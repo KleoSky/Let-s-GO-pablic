@@ -1,0 +1,122 @@
+mixin companions()
+  .companions
+    .container
+      .companions__cards
+        h2.companions__cards-title Карточки возможных попутчиков
+        ul.companions__list
+          +traveler-card('companions', 'Таня&thinsp;<br>Фирсова', '#ЗОЖ #ПП #Фитнес #пляж&thinsp;#авокадо #смузи', {levelCounter: '99', image: 'card-image-cat-desktop-one', height: '286', altText: 'Девушка в прозрачном водоёме с голубой водой', image2: 'card-image-one', wantText: 'Хочет посетить:', flags: ['flag-sri-lanka', 'flag-thailand', 'flag-seychelles'], flagsAlt: ['Флаг Шри-Ланки', 'Флаг Таиланда', 'Флаг Сейшельских Островов'], flagTexts: ['Шри-Ланка', 'Тайланд', 'Сейшелы']}).companions__item--one
+          +traveler-card('companions', 'Петя&thinsp;<br>Демин', '#бургер #бар #футбол&thinsp;<br>#концерт #крафт', {levelCounter: '80', image: 'card-image-cat-desktop-two', height: '285', altText: 'Мужчина с бородой в шапке и в очках', likesCounter: '1500', image2: 'card-image-cat-tablet-two', wantText: 'Хочет посетить:', flags: ['flag-belgium', 'flag-czech'], flagsAlt: ['Флаг Бельгии', 'Флаг Чехии'], flagTexts: ['Бельгия', 'Чехия']}).companions__item--two
+          +traveler-card('companions', 'Марк&thinsp;<br>Смолов', '#рэп #тату #хайпбист #кроссовки #суприм', {levelCounter: '25', image: 'card-image-cat-desktop-three', height: '285', altText: 'Татуированный парень сидит на крыше машины с деньгами в руках', likesCounter: '170', image2: 'card-image-three', wantText: 'Хочет посетить:', flags: ['flag-usa', 'flag-australia', 'flag-dominica'], flagsAlt: ['Флаг США', 'Флаг Австралии', 'Флаг Доминики'], flagTexts: ['США', 'Австралия', 'Доминика']}).companions__item--three
+          +traveler-card('companions', 'Лариса&thinsp;<br>Роговая', '#образование #карьера&thinsp;<br>#учеба #линкедин', {levelCounter: '50', image: 'card-image-cat-desktop-four', height: '285', altText: 'Молодая улыбающаяся брюнетка в синем деловом костюме', likesCounter: '23', image2: 'card-image-four', wantText: 'Хочет посетить:', flags: ['flag-uk', 'flag-germany'], flagsAlt: ['Флаг Великобритании', 'Флаг Германии'], flagTexts: ['Великобритания', 'Германия']}).companions__item--four
+        button.companions__button(type="button")
+          +icon('icon-plus', 26, 26)
+          span Показать еще
+        .companions__pagination-wrapper
+          ul.companions__pagination-list
+            li.companions__pagination-item.companions__pagination-item--active
+              a(href="#") 1
+            li.companions__pagination-item
+              a(href="#") 2
+            li.companions__pagination-item
+              a(href="#") 3
+            li.companions__pagination-item
+              a(href="#") 4
+          .companions__pagination-buttons
+            button.companions__pagination-button.companions__pagination-button--prev(type="button", aria-label="Показать предыдущую страницу")
+            button.companions__pagination-button.companions__pagination-button--next(type="button", aria-label="Показать следующую страницу")
+      .companions__choice.choice
+        h2.choice__title Подберите идеального попутчика
+        form.choice__form(action="https://echo.htmlacademy.ru/", method="get")
+          .choice__fieldset
+            h3 Хобби:
+              button.choice__button-filter(type="button", aria-label="Показать варианты", data-name="hobby")
+                +icon('icon-arrow-filter', 10, 6)
+            .choice__labels.choice__labels--closed(data-name="hobby")
+              label.choice__check-label
+                input.choice__checkbox(type="checkbox", name="gym", checked)
+                span.choice__check-wrapper
+                  +icon('icon-check', 11, 11)
+                span.choice__check-description Спортзал
+              label.choice__check-label
+                input.choice__checkbox(type="checkbox", name="hookah")
+                span.choice__check-wrapper
+                  +icon('icon-check', 11, 11)
+                span.choice__check-description Кальян
+              label.choice__check-label
+                input.choice__checkbox(type="checkbox", name="sofa")
+                span.choice__check-wrapper
+                  +icon('icon-check', 11, 11)
+                span.choice__check-description Диван
+          .choice__fieldset
+            h3 Музыка:
+              button.choice__button-filter(type="button", aria-label="Показать варианты", data-name="music")
+                +icon('icon-arrow-filter', 10, 6)
+            .choice__labels.choice__labels--opened(data-name="music")
+              label.choice__check-label
+                input.choice__checkbox(type="checkbox", name="rock", checked)
+                span.choice__check-wrapper
+                  +icon('icon-check', 11, 11)
+                span.choice__check-description Тяжёлый рок
+              label.choice__check-label
+                input.choice__checkbox(type="checkbox", name="rap")
+                span.choice__check-wrapper
+                  +icon('icon-check', 11, 11)
+                span.choice__check-description Русский рэп
+              label.choice__check-label
+                input.choice__checkbox(type="checkbox", name="dance")
+                span.choice__check-wrapper
+                  +icon('icon-check', 11, 11)
+                span.choice__check-description Евроденс
+          .choice__fieldset
+            h3 Еда:
+              button.choice__button-filter(type="button", aria-label="Показать варианты", data-name="food")
+                +icon('icon-arrow-filter', 10, 6)
+            .choice__labels.choice__labels--closed(data-name="food")
+              label.choice__check-label
+                input.choice__checkbox(type="checkbox", name="meat", checked)
+                span.choice__check-wrapper
+                  +icon('icon-check', 11, 11)
+                span.choice__check-description Мясоед
+              label.choice__check-label
+                input.choice__checkbox(type="checkbox", name="pp")
+                span.choice__check-wrapper
+                  +icon('icon-check', 11, 11)
+                span.choice__check-description Сидит на ПП
+              label.choice__check-label
+                input.choice__checkbox(type="checkbox", name="vegan")
+                span.choice__check-wrapper
+                  +icon('icon-check', 11, 11)
+                span.choice__check-description Веган-сыроед
+          .choice__fieldset.choice__fieldset--transport
+            h3 Транспорт:
+              button.choice__button-filter(type="button", aria-label="Показать варианты", data-name="transport")
+                +icon('icon-arrow-filter', 10, 6)
+            .choice__labels.choice__labels--opened.choice__labels--transport(data-name="transport")
+              label.choice__transport
+                input.choice__checkbox-transport(type="checkbox", name="plane", checked)
+                span.choice__icon.choice__icon--plane
+                  +icon('icon-plane', 23, 22)
+              label.choice__transport
+                input.choice__checkbox-transport(type="checkbox", name="bus", checked)
+                span.choice__icon.choice__icon--bus
+                  +icon('icon-bus', 23, 22)
+              label.choice__transport
+                input.choice__checkbox-transport(type="checkbox", name="bicycle")
+                span.choice__icon.choice__icon--bicycle
+                  +icon('icon-bicycle', 23, 22)
+              label.choice__transport
+                input.choice__checkbox-transport(type="checkbox", name="on-foot", checked)
+                span.choice__icon.choice__icon--run
+                  +icon('icon-run', 23, 22)
+          .choice__fieldset.choice__fieldset--range
+            h3 Левел:
+              button.choice__button-filter(type="button", aria-label="Показать варианты", data-name="level")
+                +icon('icon-arrow-filter', 10, 6)
+            .choice__labels.choice__labels--opened.choice__labels--level(data-name="level")
+              .choice__inputs-wrapper
+                label.choice__label-cost.choice__input-cost--from
+                  input.choice__input.choice__input--from(type="text", name="from", placeholder="30")
+                label.choice__label-cost.choice__input-cost--to
+                  input.choice__input.choice__input--to(type="text", name="to", placeholder="100")
+              .choice__slider
+          button.choice__button(type="submit") Показать

@@ -1,0 +1,40 @@
+mixin countries()
+  .countries
+    .container
+      .countries__buttons-wrapper
+        .countries__buttons-init
+          button.countries__button.countries__button--all.countries__button--desktop(type="button", data-filter="all")
+            +icon('icon-filter', 23, 15)
+            span Фильтрация по странам:
+          button.countries__button.countries__button--more.countries__button--tablet(type="button", data-filter="more")
+            +icon('icon-point', 33, 6)
+            span Показать все
+        .countries__buttons-filter.countries__buttons-filter--closed
+          label.countries__label
+            input.countries__checkbox.countries__button--europe(type="checkbox", data-filter="europe")
+            span Европа
+          label.countries__label
+            input.countries__checkbox.countries__button--asia(type="checkbox", data-filter="asia")
+            span Азия
+          label.countries__label
+            input.countries__checkbox.countries__button--america(type="checkbox", data-filter="america")
+            span Америка
+          label.countries__label
+            input.countries__checkbox.countries__button--islands(type="checkbox", data-filter="islands")
+            span Острова
+      ul.countries__list.countries__list--desktop.countries__list--closed
+        each letter in ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'З', 'И', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ч', 'Ш', 'Э', 'Ю', 'Я']
+          li.countries__item(data-letter=letter)
+            span= letter
+            ul.countries__sublist
+              li.countries__subitem Австралия
+      .countries__tablet-layout-wrapper.countries__tablet-layout-wrapper--closed
+        .countries__tablet-layout.countries__list--tablet.countries__tablet-layout--closed
+          .countries__letters
+            each letter in ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'З', 'И', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ч', 'Ш', 'Э', 'Ю', 'Я']
+              .countries__letter(data-letter=letter, class=letter === 'А' ? 'countries__letter--active' : '')= letter
+          .countries__countries-content
+            ul.countries__sublist
+        button.countries__close-button.countries__close-button--closed(type="button")
+          +icon('icon-close', 22, 24)
+          span Свернуть
